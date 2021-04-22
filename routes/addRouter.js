@@ -7,7 +7,7 @@ const requestBody = require("../middleware/request-body");
 const addRouter = express.Router();
 addRouter.use(bodyParser.json());
 
-addRouter.get("/", requestBody.check, (req, res, _next) => {
+addRouter.post("/", requestBody.check, (req, res, _next) => {
   database.addContact(req.query.name, req.query.phonenumber);
 
   res.statusCode = 200;
